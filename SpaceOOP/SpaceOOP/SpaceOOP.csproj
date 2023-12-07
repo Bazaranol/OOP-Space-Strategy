@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59C66A63-8FBA-4A3C-8F4C-419F472AC13F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SpaceOOP</RootNamespace>
+    <AssemblyName>SpaceOOP</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\NuclearEngine.cs" />
+    <Compile Include="Engine\OilEngine.cs" />
+    <Compile Include="Engine\SunEngine.cs" />
+    <Compile Include="Objects\Item.cs" />
+    <Compile Include="Map\Cell.cs" />
+    <Compile Include="Map\MapControll.cs" />
+    <Compile Include="Map\Render.cs" />
+    <Compile Include="Objects\MapObject.cs" />
+    <Compile Include="Objects\MovingObject.cs" />
+    <Compile Include="Objects\StaticObject.cs" />
+    <Compile Include="Planet\EmptyPlanet.cs" />
+    <Compile Include="Planet\OilPlanet.cs" />
+    <Compile Include="Planet\Planet.cs" />
+    <Compile Include="Planet\ResourcefulPlanet.cs" />
+    <Compile Include="Resource\enumResources.cs" />
+    <Compile Include="Resource\Oil.cs" />
+    <Compile Include="Resource\Resource.cs" />
+    <Compile Include="Resource\Uranium.cs" />
+    <Compile Include="Robot\OilRobot.cs" />
+    <Compile Include="Robot\OilRobotItem.cs" />
+    <Compile Include="Robot\Robot.cs" />
+    <Compile Include="Robot\RobotItem.cs" />
+    <Compile Include="Robot\UraniumRobot.cs" />
+    <Compile Include="Robot\UraniumRobotItem.cs" />
+    <Compile Include="SpaceShip\NuclearShip.cs" />
+    <Compile Include="SpaceShip\RegularShip.cs" />
+    <Compile Include="SpaceShip\SpaceShip.cs" />
+    <Compile Include="SpaceShip\SunShip.cs" />
+    <Compile Include="SpaceStation\EnginesModule.cs" />
+    <Compile Include="SpaceStation\Module.cs" />
+    <Compile Include="SpaceStation\OilModule.cs" />
+    <Compile Include="SpaceStation\RobotsModule.cs" />
+    <Compile Include="SpaceStation\SpaceStation.cs" />
+    <Compile Include="SpaceStation\UraniumModule.cs" />
+    <Compile Include="sprites.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sprites.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Star\DeathEnergy.cs" />
+    <Compile Include="Star\Star.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Star\StarEnergy.cs" />
+    <Compile Include="Star\UsefulEnergy.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="sprites.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>sprites.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\deathEnergy.png" />
+    <Content Include="Resources\emptyPlanet.png" />
+    <Content Include="Resources\enginesModule.png" />
+    <Content Include="Resources\nuclearSpaceship.png" />
+    <Content Include="Resources\oil.png" />
+    <Content Include="Resources\oilModule.png" />
+    <Content Include="Resources\oilPlanet.png" />
+    <Content Include="Resources\oilRobot.png" />
+    <Content Include="Resources\regularSpaceship.png" />
+    <Content Include="Resources\resourcefulPlanet.png" />
+    <Content Include="Resources\robotsModule.png" />
+    <Content Include="Resources\spaceStation.png" />
+    <Content Include="Resources\star.png" />
+    <Content Include="Resources\sunSpaceship.png" />
+    <Content Include="Resources\uranium.png" />
+    <Content Include="Resources\uraniumModule.png" />
+    <Content Include="Resources\uraniumRobot.png" />
+    <Content Include="Resources\usefulEnergy.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
